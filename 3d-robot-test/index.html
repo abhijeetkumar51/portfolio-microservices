@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>3D Robot Test – Robot Focus</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: #020617;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      color: #ffffff;
+    }
+
+    h1 {
+      margin: 20px 0 10px;
+      font-size: 20px;
+      letter-spacing: 2px;
+      color: #7aa2ff;
+    }
+
+    #robot-container {
+      width: 90%;
+      max-width: 600px;
+      height: 430px;
+      border-radius: 18px;
+      overflow: hidden;
+      background: #0b1120;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7);
+    }
+  </style>
+</head>
+<body>
+  <h1>🤖 ROBOT LOAD TEST</h1>
+  <div id="robot-container"></div>
+
+  <!-- Three.js (global) -->
+  <script src="https://unpkg.com/three@0.128.0/build/three.min.js"></script>
+  <script src="https://unpkg.com/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+  <script src="https://unpkg.com/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+
+  <script>
+    console.log("Script loaded, starting init…");
+
+    let scene, camera, renderer, controls, robot, cube;
+
+    function init() {
+      const container = document.getElementById("robot-container");
+      const width = container.clientWidth;
+      const height = container.clientHeight;
+
+      scene = new THREE.Scene();
+      scene.background = new THREE.Color(0x020617);
+
+      camera = new THREE.PerspectiveCamera(60, width / height, 0.1, 100);
+      camera.position.set(0, 1.8, 5);
+
+      renderer = new THREE.WebGLRenderer({ antialias: true });
+      renderer.setSize(width, height);
+      renderer.setPixelRatio(window.devicePixelRatio);
+      container.appendChild(renderer.domElement);
+
+      // Lights
+      const hemi = new THREE.HemisphereLight(0xffffff, 0x222244, 1.5);
+      scene.add(hemi);
+
+      const dir = new THREE.DirectionalLight(0xffffff, 1);
+      dir.position.set(5, 10, 7);
+      scene.add(dir);
+
+      // Grid
+      const grid = new THREE.GridHelper(20, 20, 0x4444ff, 0x222233);
+      scene.add(grid);
+
+      // Test cube (visible until robot loads)
+      cube = new THREE.Mesh(
+        new THREE.BoxGeometry(1, 1, 1),
+        new THREE.MeshStandardMaterial({ color: 0x22ff99 })
+      );
+      cube.position.y = 1;
+      scene.add(cube);
+      console.log("Cube added to scene");
+
+      // Controls
+      controls = new THREE.OrbitControls(camera, renderer.domElement);
+      controls.enableDamping = true;
+
+      // ---------- LOAD ROBOT.GLB FROM SAME FOLDER ----------
+      const loader = new THREE.GLTFLoader();
+      loader.load("./models/robot.glb",
+          // <- same folder as index.html
+        function (gltf) {
+          console.log("Robot model loaded successfully");
+          robot = gltf.scene;
+
+          // Make sure it's a good visible size
+          robot.scale.set(1.5, 1.5, 1.5);   // increase if too small
+
+          // Place it above grid and in front of camera
+          robot.position.set(0, 1, 0);
+
+          scene.add(robot);
+
+          // Remove the cube once robot is visible
+          if (cube) {
+            scene.remove(cube);
+            cube.geometry.dispose();
+            cube.material.dispose();
+            cube = null;
+          }
+        },
+        function (xhr) {
+          console.log("Robot loading:", (xhr.loaded / xhr.total * 100).toFixed(1) + "%");
+        },
+        function (error) {
+          console.error("Error loading robot.glb:", error);
+        }
+      );
+
+      window.addEventListener("resize", onResize);
+      animate();
+    }
+
+    function onResize() {
+      const container = document.getElementById("robot-container");
+      const width = container.clientWidth;
+      const height = container.clientHeight;
+
+      camera.aspect = width / height;
+      camera.updateProjectionMatrix();
+      renderer.setSize(width, height);
+    }
+
+    function animate() {
+      requestAnimationFrame(animate);
+
+      if (robot) {
+        robot.rotation.y += 0.01; // spin robot
+      }
+
+      controls.update();
+      renderer.render(scene, camera);
+    }
+
+    window.addEventListener("DOMContentLoaded", init);
+  </script>
+</body>
+</html>

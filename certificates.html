@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Certificates - Abhijeet's Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        #floating-shapes {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.3;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Abhijeet</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="projects.html">Projects</a>
+                <a href="certificates.html" class="active">Certificates</a>
+                <a href="contact.html" class="btn">Contact</a>
+            </div>
+            <button class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+    
+    <!-- Certificates Section -->
+    <section class="certificates-page">
+        <div class="container">
+            <h1 class="section-title fade-in-up">My Certificates</h1>
+            <p class="text-center mb-4 fade-in-up">Here are some of the certifications I've earned through various online platforms and institutions to enhance my skills and knowledge.</p>
+            
+            <!-- Certificate Filters -->
+            <div class="certificate-filters fade-in-up">
+                <button class="filter-btn active" data-filter="all">All Certificates</button>
+                <button class="filter-btn" data-filter="programming">Programming</button>
+                <button class="filter-btn" data-filter="cyber">Cybersecurity</button>
+                <button class="filter-btn" data-filter="data">Data Science</button>
+            </div>
+            
+            <!-- Certificates Grid -->
+            <div class="certificates-grid">
+                <!-- Certificate 1 -->
+                <div class="certificate-card fade-in-up" data-category="cyber">
+                    <div class="certificate-image">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="certificate-content">
+                        <h3>Ethical Hacking</h3>
+                        <div class="certificate-issuer">
+                            <i class="fas fa-university"></i>
+                            <span>NPTEL</span>
+                        </div>
+                        <div class="certificate-date">Issued: June 2023</div>
+                        <p>Comprehensive course covering ethical hacking methodologies, penetration testing, and cybersecurity best practices.</p>
+                        <a href="#" class="certificate-link" target="_blank">
+                            View Certificate <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Certificate 2 -->
+                <div class="certificate-card fade-in-up delay-1" data-category="programming">
+                    <div class="certificate-image">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <div class="certificate-content">
+                        <h3>SQL (Basic) Certificate</h3>
+                        <div class="certificate-issuer">
+                            <i class="fab fa-hackerrank"></i>
+                            <span>HackerRank</span>
+                        </div>
+                        <div class="certificate-date">Issued: March 2023</div>
+                        <p>Demonstrated proficiency in writing SQL queries, including complex joins, subqueries, and database design principles.</p>
+                        <a href="#" class="certificate-link" target="_blank">
+                            View Certificate <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Certificate 3 -->
+                <div class="certificate-card fade-in-up delay-2" data-category="programming">
+                    <div class="certificate-image">
+                        <i class="fab fa-java"></i>
+                    </div>
+                    <div class="certificate-content">
+                        <h3>Java Programming</h3>
+                        <div class="certificate-issuer">
+                            <i class="fas fa-laptop-code"></i>
+                            <span>Neo Colab</span>
+                        </div>
+                        <div class="certificate-date">Issued: December 2022</div>
+                        <p>Mastered core Java concepts including OOP, data structures, algorithms, and exception handling.</p>
+                        <a href="#" class="certificate-link" target="_blank">
+                            View Certificate <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Certificate 4 -->
+                <div class="certificate-card fade-in-up" data-category="data">
+                    <div class="certificate-image">
+                        <i class="fas fa-laptop"></i>
+                    </div>
+                    <div class="certificate-content">
+                        <h3>Hardware & OS Fundamentals</h3>
+                        <div class="certificate-issuer">
+                            <i class="fab fa-microsoft"></i>
+                            <span>Coursera</span>
+                        </div>
+                        <div class="certificate-date">Issued: September 2022</div>
+                        <p>Comprehensive understanding of computer hardware components and operating system fundamentals.</p>
+                        <a href="#" class="certificate-link" target="_blank">
+                            View Certificate <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Certificate 5 -->
+                <div class="certificate-card fade-in-up delay-1" data-category="programming">
+                    <div class="certificate-image">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <div class="certificate-content">
+                        <h3>Python for Data Science</h3>
+                        <div class="certificate-issuer">
+                            <i class="fab fa-google"></i>
+                            <span>Google</span>
+                        </div>
+                        <div class="certificate-date">Issued: July 2022</div>
+                        <p>Specialization in using Python for data analysis, visualization, and machine learning applications.</p>
+                        <a href="#" class="certificate-link" target="_blank">
+                            View Certificate <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Certificate 6 -->
+                <div class="certificate-card fade-in-up delay-2" data-category="cyber">
+                    <div class="certificate-image">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <div class="certificate-content">
+                        <h3>Cybersecurity Fundamentals</h3>
+                        <div class="certificate-issuer">
+                            <i class="fas fa-shield-virus"></i>
+                            <span>IBM</span>
+                        </div>
+                        <div class="certificate-date">Issued: May 2022</div>
+                        <p>Comprehensive training in cybersecurity principles, threat detection, and risk management strategies.</p>
+                        <a href="#" class="certificate-link" target="_blank">
+                            View Certificate <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Additional Certifications Section -->
+            <div class="additional-certifications fade-in-up">
+                <h2 class="section-title">Additional Certifications</h2>
+                <div class="certification-list">
+                    <div class="certification-item">
+                        </div>
+                    </div>
+                    <div class="certification-item">
+                        <h3>Responsive Web Design</h3>
+                        <div class="certification-meta">
+                            <span class="issuer">freeCodeCamp</span>
+                            <span class="date">2023</span>
+                        </div>
+                    </div>
+                    <div class="certification-item">
+                
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificate Modal -->
+    <div id="certificate-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+    
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <h3>Abhijeet Choudhary</h3>
+                    <p> Cloud, Devops & Full-Stack Developer passionate about creating beautiful, functional web applications.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <!-- <li><a href="certificates.html">Certificates</a></li> -->
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Get In Touch</h4>
+                    <p><i class="fas fa-envelope"></i>chaudharyabhijeet51@gmail.com </p>
+                    <div class="social-links">
+                        <a href="https://github.com/abhijeetkumar51" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/abhijeet-kumar51/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com/abhijeet_br.33/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Abhijeet. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <!-- Three.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    
+    <div id="floating-shapes"></div>
+    
+    <script>
+        // Initialize floating 3D shapes
+        document.addEventListener('DOMContentLoaded', function() {
+            // Three.js setup
+            const container = document.getElementById('floating-shapes');
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+            
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            container.appendChild(renderer.domElement);
+            
+            // Create shapes
+            const geometry = [
+                new THREE.TetrahedronGeometry(1, 0),
+                new THREE.BoxGeometry(1.5, 1.5, 1.5),
+                new THREE.OctahedronGeometry(1.2, 0),
+                new THREE.IcosahedronGeometry(1, 0),
+                new THREE.DodecahedronGeometry(1, 0)
+            ];
+            
+            const materials = [
+                new THREE.MeshPhongMaterial({ color: 0x4f46e5, shininess: 100 }),
+                new THREE.MeshPhongMaterial({ color: 0x8b5cf6, shininess: 100 }),
+                new THREE.MeshPhongMaterial({ color: 0x4338ca, shininess: 100 })
+            ];
+            
+            const shapes = [];
+            const shapeCount = 8;
+            
+            for (let i = 0; i < shapeCount; i++) {
+                const shape = new THREE.Mesh(
+                    geometry[Math.floor(Math.random() * geometry.length)],
+                    materials[Math.floor(Math.random() * materials.length)]
+                );
+                
+                // Random position
+                shape.position.x = Math.random() * 40 - 20;
+                shape.position.y = Math.random() * 20 - 10;
+                shape.position.z = Math.random() * -50;
+                
+                // Random rotation
+                shape.rotation.x = Math.random() * Math.PI;
+                shape.rotation.y = Math.random() * Math.PI;
+                
+                // Random size
+                const scale = 0.5 + Math.random() * 1.5;
+                shape.scale.set(scale, scale, scale);
+                
+                // Store speed for animation
+                shape.userData = {
+                    speed: 0.001 + Math.random() * 0.003,
+                    rotationSpeed: {
+                        x: Math.random() * 0.01 - 0.005,
+                        y: Math.random() * 0.01 - 0.005,
+                        z: Math.random() * 0.01 - 0.005
+                    },
+                    direction: Math.random() > 0.5 ? 1 : -1
+                };
+                
+                scene.add(shape);
+                shapes.push(shape);
+            }
+            
+            // Add lights
+            const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+            scene.add(ambientLight);
+            
+            const light1 = new THREE.DirectionalLight(0xffffff, 0.8);
+            light1.position.set(1, 1, 1);
+            scene.add(light1);
+            
+            const light2 = new THREE.DirectionalLight(0xffffff, 0.5);
+            light2.position.set(-1, -1, -1);
+            scene.add(light2);
+            
+            // Position camera
+            camera.position.z = 10;
+            
+            // Animation
+            function animate() {
+                requestAnimationFrame(animate);
+                
+                shapes.forEach((shape, i) => {
+                    // Rotate shape
+                    shape.rotation.x += shape.userData.rotationSpeed.x;
+                    shape.rotation.y += shape.userData.rotationSpeed.y;
+                    shape.rotation.z += shape.userData.rotationSpeed.z;
+                    
+                    // Float up and down
+                    shape.position.y += Math.sin(Date.now() * shape.userData.speed) * 0.01;
+                    shape.position.x += Math.cos(Date.now() * shape.userData.speed * 0.7) * 0.01;
+                });
+                
+                renderer.render(scene, camera);
+            }
+            
+            // Handle window resize
+            function onWindowResize() {
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(window.innerWidth, window.innerHeight);
+            }
+            
+            window.addEventListener('resize', onWindowResize, false);
+            
+            // Start animation
+            animate();
+        });
+        
+        // Certificate filtering functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.certificate-filters .filter-btn');
+            const certificateCards = document.querySelectorAll('.certificate-card');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Add active class to clicked button
+                    button.classList.add('active');
+                    
+                    const filterValue = button.getAttribute('data-filter');
+                    
+                    certificateCards.forEach(card => {
+                        if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                            card.style.display = 'flex';
+                            setTimeout(() => {
+                                card.style.opacity = '1';
+                                card.style.transform = 'translateY(0)';
+                            }, 50);
+                        } else {
+                            card.style.opacity = '0';
+                            card.style.transform = 'translateY(20px)';
+                            setTimeout(() => {
+                                card.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                });
+            });
+            
+            // Certificate modal functionality
+            const modal = document.getElementById('certificate-modal');
+            const modalImg = document.getElementById('certificate-image');
+            const closeModal = document.querySelector('.close-modal');
+            
+            // When user clicks on a certificate link
+            document.querySelectorAll('.certificate-link').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const imgSrc = this.getAttribute('data-img');
+                    if (imgSrc) {
+                        modal.style.display = 'flex';
+                        modalImg.src = imgSrc;
+                        document.body.style.overflow = 'hidden'; // Prevent scrolling
+                    } else {
+                        // If no image is available, open the link in a new tab
+                        window.open(this.href, '_blank');
+                    }
+                });
+            });
+            
+            // Close modal when clicking the close button
+            closeModal.addEventListener('click', function() {
+                modal.style.display = 'none';
+                document.body.style.overflow = ''; // Re-enable scrolling
+            });
+            
+            // Close modal when clicking outside the image
+            window.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = ''; // Re-enable scrolling
+                }
+            });
+            
+            // Close modal with Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && modal.style.display === 'flex') {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = ''; // Re-enable scrolling
+                }
+            });
+        });
+    </script>
+</body>
+</html>
