@@ -8,10 +8,10 @@
     --secondary-color: #4338ca;
     --accent-color: #8b5cf6;
     --text-color: #1f2937;
-    --light-text: #4b5563;
+    --light-text: #6b7280;
     --background: #ffffff;
-    --light-bg: #f8fafc;
-    --border-color: #e2e8f0;
+    --light-bg: #f9fafb;
+    --border-color: #e5e7eb;
     --success-color: #10b981;
     --error-color: #ef4444;
     --warning-color: #f59e0b;
@@ -44,6 +44,265 @@
     --radius-xl: 1rem;
     --radius-full: 9999px;
 }
+
+/* ============================================
+   PROFESSIONAL SCROLL-BASED REVEAL ANIMATIONS
+   ============================================ */
+
+/* Reveal Animation Classes */
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Different Reveal Styles */
+.reveal-left {
+    opacity: 0;
+    transform: translateX(-80px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal-left.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.reveal-right {
+    opacity: 0;
+    transform: translateX(80px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal-right.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.reveal-scale {
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal-scale.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.reveal-rotate {
+    opacity: 0;
+    transform: rotate(10deg) scale(0.9);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal-rotate.active {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+}
+
+/* Staggered Reveal Delays */
+.stagger-1 { transition-delay: 0.1s; }
+.stagger-2 { transition-delay: 0.2s; }
+.stagger-3 { transition-delay: 0.3s; }
+.stagger-4 { transition-delay: 0.4s; }
+.stagger-5 { transition-delay: 0.5s; }
+.stagger-6 { transition-delay: 0.6s; }
+
+/* Hero Section - Always Visible */
+.hero-section {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Subtle Background Particles */
+@keyframes particleFloat {
+    0%, 100% {
+        transform: translateY(0) translateX(0);
+        opacity: 0.1;
+    }
+    50% {
+        transform: translateY(-20px) translateX(10px);
+        opacity: 0.2;
+    }
+}
+
+.particle {
+    position: fixed;
+    pointer-events: none;
+    opacity: 0.1;
+    animation: particleFloat 15s ease-in-out infinite;
+    font-size: 20px;
+    z-index: -1;
+}
+
+.particle:nth-child(1) { top: 10%; left: 10%; animation-delay: 0s; }
+.particle:nth-child(2) { top: 20%; left: 80%; animation-delay: 3s; }
+.particle:nth-child(3) { top: 60%; left: 20%; animation-delay: 6s; }
+.particle:nth-child(4) { top: 80%; left: 70%; animation-delay: 9s; }
+.particle:nth-child(5) { top: 40%; left: 50%; animation-delay: 12s; }
+
+/* Professional Hover Effects */
+.hover-lift {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.hover-scale {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-scale:hover {
+    transform: scale(1.05);
+}
+
+/* Smooth Page Load */
+.page-load {
+    animation: pageLoad 0.6s ease-out;
+}
+
+@keyframes pageLoad {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Universal Page Animations */
+@keyframes pageLoad {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Animation Classes */
+.fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+.slide-in-left {
+    animation: slideInLeft 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+.slide-in-right {
+    animation: slideInRight 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+.page-load {
+    animation: pageLoad 0.6s ease-out;
+}
+
+/* Staggered Animation Delays */
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
+.delay-5 { animation-delay: 0.5s; }
+
+/* Hover Effects */
+.hover-lift {
+    transition: var(--transition-bounce);
+}
+
+.hover-lift:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl);
+}
+
+.hover-scale {
+    transition: var(--transition);
+}
+
+.hover-scale:hover {
+    transform: scale(1.05);
+}
+
+/* Background Particles */
+@keyframes particleFloat {
+    0%, 100% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+        opacity: 0.3;
+    }
+    25% {
+        transform: translateY(-20px) translateX(10px) rotate(90deg);
+        opacity: 0.6;
+    }
+    50% {
+        transform: translateY(-40px) translateX(-10px) rotate(180deg);
+        opacity: 0.3;
+    }
+    75% {
+        transform: translateY(-20px) translateX(5px) rotate(270deg);
+        opacity: 0.6;
+    }
+}
+
+.particle {
+    position: fixed;
+    pointer-events: none;
+    opacity: 0.3;
+    animation: particleFloat 10s ease-in-out infinite;
+}
+
+.particle:nth-child(1) { top: 10%; left: 10%; animation-delay: 0s; }
+.particle:nth-child(2) { top: 20%; left: 80%; animation-delay: 2s; }
+.particle:nth-child(3) { top: 60%; left: 20%; animation-delay: 4s; }
+.particle:nth-child(4) { top: 80%; left: 70%; animation-delay: 6s; }
+.particle:nth-child(5) { top: 40%; left: 50%; animation-delay: 8s; }
 
 /* Reset & Base Styles */
 * {
@@ -1397,6 +1656,126 @@ section {
     position: relative;
 }
 
+.contact-form .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.contact-form .input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.contact-form .input-icon {
+    position: absolute;
+    left: var(--spacing-lg);
+    color: var(--light-text);
+    transition: var(--transition);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.contact-form .input-wrapper:focus-within .input-icon {
+    color: var(--primary-color);
+    transform: scale(1.1);
+}
+
+.contact-form .checkbox-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.contact-form .checkbox-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 500;
+    color: var(--text-color);
+    position: relative;
+    padding-left: 2rem;
+}
+
+.contact-form .checkbox-label input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.contact-form .checkmark {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 1.25rem;
+    width: 1.25rem;
+    background-color: var(--light-bg);
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    transition: var(--transition);
+}
+
+.contact-form .checkbox-label:hover .checkmark {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.contact-form .checkbox-label input:checked ~ .checkmark {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.contact-form .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 0.25rem;
+    top: 0.1rem;
+    width: 0.3rem;
+    height: 0.6rem;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.contact-form .checkbox-label input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.contact-form .form-actions {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-xl);
+}
+
+.contact-form .form-reset {
+    background: transparent;
+    color: var(--light-text);
+    border: 2px solid var(--border-color);
+    padding: var(--spacing-md) var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-size: 1rem;
+}
+
+.contact-form .form-reset:hover {
+    background: var(--light-bg);
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
 .contact-form label {
     display: block;
     margin-bottom: var(--spacing-sm);
@@ -1406,15 +1785,26 @@ section {
 }
 
 .contact-form input,
-.contact-form textarea {
+.contact-form textarea,
+.contact-form select {
     width: 100%;
-    padding: var(--spacing-md) var(--spacing-lg);
+    padding: var(--spacing-md) var(--spacing-lg) var(--spacing-md) 3rem;
     border: 2px solid var(--border-color);
     border-radius: var(--radius-lg);
     font-family: inherit;
     font-size: 1rem;
     background-color: var(--light-bg);
     transition: var(--transition);
+    appearance: none;
+    cursor: pointer;
+}
+
+.contact-form select {
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right var(--spacing-md) center;
+    background-size: 1.25rem;
+    padding-right: 3rem;
 }
 
 .contact-form textarea {
@@ -1423,12 +1813,80 @@ section {
 }
 
 .contact-form input:focus,
-.contact-form textarea:focus {
+.contact-form textarea:focus,
+.contact-form select:focus {
     outline: none;
     border-color: var(--primary-color);
     background-color: white;
     box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1);
     transform: translateY(-2px);
+}
+
+.contact-form input.error,
+.contact-form textarea.error,
+.contact-form select.error {
+    border-color: var(--error-color);
+    background-color: rgba(239, 68, 68, 0.05);
+}
+
+.contact-form input.error:focus,
+.contact-form textarea.error:focus,
+.contact-form select.error:focus {
+    box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.1);
+}
+
+.contact-form .error-message {
+    color: var(--error-color);
+    font-size: 0.875rem;
+    margin-top: var(--spacing-xs);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#form-messages {
+    margin-top: var(--spacing-lg);
+}
+
+#form-messages .alert {
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-weight: 500;
+    animation: slideDown 0.3s ease-out;
+    margin-bottom: var(--spacing-md);
+}
+
+#form-messages .alert-success {
+    background-color: rgba(16, 185, 129, 0.1);
+    color: var(--success-color);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+#form-messages .alert-error {
+    background-color: rgba(239, 68, 68, 0.1);
+    color: var(--error-color);
+    border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+#form-messages .alert-info {
+    background-color: rgba(59, 130, 246, 0.1);
+    color: #3b82f6;
+    border: 1px solid rgba(59, 130, 246, 0.2);
 }
 
 .google-form-wrapper {
@@ -1978,6 +2436,22 @@ section {
     
     .contact-form {
         padding: var(--spacing-lg);
+    }
+    
+    .contact-form .form-row {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+    
+    .contact-form .form-actions {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    
+    .contact-form .form-submit,
+    .contact-form .form-reset {
+        width: 100%;
+        justify-content: center;
     }
     
     .contact-item {

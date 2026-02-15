@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Contact Form Submission</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            text-align: center;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #4f46e5;
+            margin-bottom: 30px;
+        }
+        .header h1 {
+            color: #4f46e5;
+            margin: 0;
+            font-size: 28px;
+        }
+        .header p {
+            color: #666;
+            margin: 5px 0 0 0;
+            font-size: 14px;
+        }
+        .field {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #4f46e5;
+        }
+        .field-label {
+            font-weight: 600;
+            color: #4f46e5;
+            margin-bottom: 5px;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .field-value {
+            font-size: 16px;
+            color: #333;
+            word-wrap: break-word;
+        }
+        .message-field {
+            background-color: #e8f4fd;
+            border-left-color: #8b5cf6;
+        }
+        .footer {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #e5e7eb;
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+        }
+        .timestamp {
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .newsletter-badge {
+            display: inline-block;
+            background-color: #10b981;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+        .newsletter-badge.no {
+            background-color: #6b7280;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📬 New Contact Form Submission</h1>
+            <p>Someone has reached out through your portfolio website</p>
+        </div>
+
+        <div class="timestamp">
+            📅 Submitted on: {{sent_date}}
+        </div>
+
+        <div class="field">
+            <div class="field-label">👤 Name</div>
+            <div class="field-value">{{from_name}}</div>
+        </div>
+
+        <div class="field">
+            <div class="field-label">📧 Email Address</div>
+            <div class="field-value">{{from_email}}</div>
+        </div>
+
+        <div class="field">
+            <div class="field-label">📱 Phone Number</div>
+            <div class="field-value">{{phone}}</div>
+        </div>
+
+        <div class="field">
+            <div class="field-label">🏷️ Subject</div>
+            <div class="field-value">{{subject}}</div>
+        </div>
+
+        <div class="field message-field">
+            <div class="field-label">💬 Message</div>
+            <div class="field-value">{{message}}</div>
+        </div>
+
+        <div class="field">
+            <div class="field-label">
+                📢 Newsletter Subscription
+                <span class="newsletter-badge {{#if newsletter}}yes{{else}}no{{/if}}">
+                    {{#if newsletter}}SUBSCRIBED{{else}}NOT SUBSCRIBED{{/if}}
+                </span>
+            </div>
+            <div class="field-value">
+                {{#if newsletter}}
+                    ✅ The visitor wants to receive occasional updates about your work.
+                {{else}}
+                    ❌ The visitor does not want to receive newsletter updates.
+                {{/if}}
+            </div>
+        </div>
+
+        <div class="footer">
+            <p><strong>📧 Reply to:</strong> {{from_email}}</p>
+            <p><em>This message was sent from your portfolio contact form</em></p>
+            <p><strong>Abhijeet's Portfolio</strong> | Cloud, DevOps & Full-Stack Developer</p>
+        </div>
+    </div>
+</body>
+</html>
