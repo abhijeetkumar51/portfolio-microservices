@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  projects-service:
+    build:
+      context: ./projects-service
+    ports:
+      - "3001:3001"
+    environment:
+      - PORT=3001
+    restart: unless-stopped
+
+  contact-service:
+    build:
+      context: ./contact-service
+    ports:
+      - "3002:3002"
+    environment:
+      - PORT=3002
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - projects-service
+      - contact-service
+    restart: unless-stopped

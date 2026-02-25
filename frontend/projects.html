@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Projects - Abhijeet's Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Abhijeet</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="projects.html" class="active">Projects</a>
+                <a href="certificates.html">Certificates</a>
+                <a href="contact.html" class="btn">Contact</a>
+            </div>
+            <button class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Projects Section -->
+    <section class="projects-page">
+        <div class="container">
+            <h1 class="section-title fade-in-up">My Projects</h1>
+            <p class="text-center mb-4 fade-in-up">Here are some of the projects I've worked on. Each project represents
+                a unique challenge I've tackled to create meaningful solutions.</p>
+
+            <!-- Project Filters -->
+            <div class="project-filters fade-in-up">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="projects-grid" id="projectsGrid">
+                <div style="text-align: center; width: 100%; padding: 2rem;">
+                    <i class="fas fa-spinner fa-spin fa-2x"></i>
+                    <p style="margin-top: 1rem;">Loading projects...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Details Modals -->
+    <div id="project-modals">
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <h3>Abhijeet</h3>
+                    <p>Full-Stack Developer passionate about creating beautiful, functional web applications.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <!-- <li><a href="projects.html">Projects</a></li> -->
+                        <li><a href="certificates.html">Certificates</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Get In Touch</h4>
+                    <p><i class="fas fa-envelope"></i> chaudharyabhijeet51@gmail.com</p>
+                    <div class="social-links">
+                        <a href="www.github.com/abhijeetchy51" target="_blank" aria-label="GitHub"><i
+                                class="fab fa-github"></i></a>
+                        <a href="www.linkedin.com/in/abhijeetkumar51" target="_blank" aria-label="LinkedIn"><i
+                                class="fab fa-linkedin"></i></a>
+                        <a href="www.instagram.com/abhijeet_br.33" target="_blank" aria-label="Twitter"><i
+                                class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Abhijeet. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/scroll-animations.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Fetch projects from Microservice
+            fetch('/api/projects')
+                .then(response => response.json())
+                .then(projects => {
+                    renderProjects(projects);
+                    renderModals(projects);
+                    initFilteringAndModals();
+                })
+                .catch(error => {
+                    console.error('Error fetching projects:', error);
+                    document.getElementById('projectsGrid').innerHTML = '<p class="text-center w-100 error">Failed to load projects. Please try again later.</p>';
+                });
+
+            function renderProjects(projects) {
+                const grid = document.getElementById('projectsGrid');
+                let html = '';
+
+                projects.forEach((project, index) => {
+                    html += `
+                        <div class="project-card fade-in-up delay-${index % 3}" data-category="${project.category}">
+                            <div class="project-image">
+                                <i class="${project.icon}"></i>
+                            </div>
+                            <h3>${project.title}</h3>
+                            <p>${project.description}</p>
+                            <div class="project-tech">
+                                ${project.tech.map(tech => `<span>${tech}</span>`).join('')}
+                            </div>
+                            <div class="project-links">
+                                <a href="#${project.id}" class="btn small primary">View Details</a>
+                                <a href="${project.links.github}" target="_blank" class="btn small secondary">
+                                    <i class="fab fa-github"></i> GitHub
+                                </a>
+                            </div>
+                        </div>
+                    `;
+                });
+
+                grid.innerHTML = html;
+            }
+
+            function renderModals(projects) {
+                const modalContainer = document.getElementById('project-modals');
+                let html = '';
+
+                projects.forEach(project => {
+                    const details = project.details;
+                    html += `
+                        <div id="${project.id}" class="project-detail">
+                            <div class="project-detail-image">
+                                <i class="${project.icon}"></i>
+                            </div>
+                            <div class="project-detail-content">
+                                <h1>${project.title}</h1>
+                                <div class="project-meta">
+                                    <span><i class="far fa-calendar-alt"></i> ${details.date}</span>
+                                    <span><i class="fas fa-code-branch"></i> ${details.type}</span>
+                                    <span><i class="fas fa-users"></i> ${details.teamStatus}</span>
+                                </div>
+                                
+                                <div class="project-description">
+                                    <p>${details.longDescription}</p>
+                                    
+                                    <div class="project-features">
+                                        <h3>Key Features</h3>
+                                        <ul>
+                                            ${details.features.map(f => `<li>${f}</li>`).join('')}
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="project-tech-stack">
+                                        <h3>Technologies Used</h3>
+                                        <div class="project-tech-tags">
+                                            ${details.detailedTech.map(tech => `<span>${tech}</span>`).join('')}
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="project-challenges">
+                                        <h3>Challenges & Solutions</h3>
+                                        ${details.challenges.map(c => `
+                                            <p><strong>Challenge:</strong> ${c.title}<br>
+                                            <strong>Solution:</strong> ${c.solution}</p>
+                                        `).join('')}
+                                    </div>
+                                </div>
+                                
+                                <div class="project-links">
+                                    <a href="${project.links.github}" target="_blank" class="btn secondary">
+                                        <i class="fab fa-github"></i> View on GitHub
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+
+                modalContainer.innerHTML = html;
+            }
+
+            // Project filtering functionality
+            function initFilteringAndModals() {
+                const filterButtons = document.querySelectorAll('.filter-btn');
+                const projectCards = document.querySelectorAll('.project-card');
+
+                filterButtons.forEach(button => {
+                    button.addEventListener('click', () => {
+                        // Remove active class from all buttons
+                        filterButtons.forEach(btn => btn.classList.remove('active'));
+                        // Add active class to clicked button
+                        button.classList.add('active');
+
+                        const filterValue = button.getAttribute('data-filter');
+
+                        projectCards.forEach(card => {
+                            if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                                card.style.display = 'flex';
+                                setTimeout(() => {
+                                    card.style.opacity = '1';
+                                    card.style.transform = 'translateY(0)';
+                                }, 50);
+                            } else {
+                                card.style.opacity = '0';
+                                card.style.transform = 'translateY(20px)';
+                                setTimeout(() => {
+                                    card.style.display = 'none';
+                                }, 300);
+                            }
+                        });
+                    });
+                });
+
+                // Handle project detail modal
+                const projectLinks = document.querySelectorAll('.project-links .btn.primary');
+
+                projectLinks.forEach(link => {
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const targetId = link.getAttribute('href');
+                        const targetModal = document.querySelector(targetId);
+
+                        if (targetModal) {
+                            // Hide all modals first
+                            document.querySelectorAll('.project-detail').forEach(modal => {
+                                modal.style.display = 'none';
+                            });
+
+                            // Show the target modal
+                            targetModal.style.display = 'block';
+
+                            // Scroll to the modal
+                            targetModal.scrollIntoView({ behavior: 'smooth' });
+                        }
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
