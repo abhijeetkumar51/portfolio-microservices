@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me - Abhijeet's Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Abhijeet</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="projects.html">Projects</a>
+                <a href="certificates.html">Certificates</a>
+                <a href="contact.html" class="active btn">Contact</a>
+            </div>
+            <button class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Contact Section -->
+    <section class="contact-page">
+        <div class="container">
+            <h1 class="section-title fade-in-up">Get In Touch</h1>
+            <p class="text-center mb-4 fade-in-up">Have a project in mind or want to discuss potential opportunities?
+                Feel free to reach out!</p>
+
+            <div class="contact-container">
+                <!-- Contact Information -->
+                <div class="contact-info fade-in-up">
+                    <h2>Contact Information</h2>
+                    <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your
+                        visions. Feel free to reach out using any of the following methods:</p>
+
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Email Me</h4>
+                                <a href="mailto:chaudharyabhijeet51@gmail.com">chaudharyabhijeet51@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Call Me</h4>
+                                <a href="tel:+917903668571">+91 7903668571</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Location</h4>
+                                <p>Punjab, India</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="social-section">
+                        <h4>Connect With Me</h4>
+                        <div class="social-links-contact">
+                            <a href="https://github.com/abhijeetchy51" target="_blank" aria-label="GitHub"
+                                class="social-icon">
+                                <i class="fab fa-github"></i>
+                                <span>GitHub</span>
+                            </a>
+                            <a href="https://www.linkedin.com/in/abhijeetkumar51" target="_blank" aria-label="LinkedIn"
+                                class="social-icon">
+                                <i class="fab fa-linkedin-in"></i>
+                                <span>LinkedIn</span>
+                            </a>
+                            <a href="https://www.instagram.com/abhijeet_br.33" target="_blank" aria-label="Instagram"
+                                class="social-icon">
+                                <i class="fab fa-instagram"></i>
+                                <span>Instagram</span>
+                            </a>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="availability">
+                        <h4>Availability</h4>
+                        <p>I'm currently available for freelance work. If you have a project that you want to get
+                            started, think you need my help with something, or just fancy saying hello, then get in
+                            touch.</p>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form fade-in-up delay-1">
+                    <h3>Send Me a Message</h3>
+                    <p>Fill out the form below and I'll get back to you as soon as possible.</p>
+
+                    <form id="contactForm" novalidate>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Your Name *</label>
+                                <div class="input-wrapper">
+                                    <i class="fas fa-user input-icon"></i>
+                                    <input type="text" id="name" name="name" class="form-control" placeholder="John Doe"
+                                        required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Your Email *</label>
+                                <div class="input-wrapper">
+                                    <i class="fas fa-envelope input-icon"></i>
+                                    <input type="email" id="email" name="email" class="form-control"
+                                        placeholder="john@example.com" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <div class="input-wrapper">
+                                    <i class="fas fa-phone input-icon"></i>
+                                    <input type="tel" id="phone" name="phone" class="form-control"
+                                        placeholder="+91 98765 43210">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="subject">Subject *</label>
+                                <div class="input-wrapper">
+                                    <i class="fas fa-tag input-icon"></i>
+                                    <select id="subject" name="subject" class="form-control" required>
+                                        <option value="">Select a topic</option>
+                                        <option value="Project Inquiry">Project Inquiry</option>
+                                        <option value="Job Opportunity">Job Opportunity</option>
+                                        <option value="Collaboration">Collaboration</option>
+                                        <option value="General Question">General Question</option>
+                                        <option value="Feedback">Feedback</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Your Message *</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-comment-dots input-icon"></i>
+                                <textarea id="message" name="message" class="form-control" rows="6"
+                                    placeholder="Tell me about your project or inquiry..." required></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="newsletter" name="newsletter">
+                                <span class="checkmark"></span>
+                                Send me occasional updates about your work
+                            </label>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="form-submit">
+                                <span class="btn-text">Send Message</span>
+                                <span class="btn-icon"><i class="fas fa-paper-plane"></i></span>
+                            </button>
+                            <button type="button" class="form-reset" onclick="resetForm()">
+                                <span class="btn-text">Clear Form</span>
+                                <span class="btn-icon"><i class="fas fa-redo"></i></span>
+                            </button>
+                        </div>
+                    </form>
+
+                    <div id="form-messages"></div>
+                </div>
+
+            </div>
+
+            <!-- Map Section -->
+            <div class="map-section fade-in-up delay-2">
+                <h2>Find Me On Map</h2>
+                <div class="map-container">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3432.065143928334!2d75.8645106151325!3d30.66710048166356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391a7f5d1a1cb6d5%3A0x1d7a0f1c6f6b1b0f!2sPunjab%2C%20India!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus"
+                        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <h3>Abhijeet</h3>
+                    <p>Cloud, Devops &Full-Stack Developer passionate about creating beautiful, functional web
+                        applications.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="certificates.html">Certificates</a></li>
+                        <!-- <li><a href="contact.html">Contact</a></li> -->
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Get In Touch</h4>
+                    <p><i class="fas fa-envelope"></i>chaudharyabhijeet51@gmail.com</p>
+                    <div class="social-links">
+                        <a href="https://github.com/abhijeetchy51" target="_blank" aria-label="GitHub"><i
+                                class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/abhijeetkumar51" target="_blank" aria-label="LinkedIn"><i
+                                class="fab fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com/abhijeet_br.33" target="_blank" aria-label="Instagram"><i
+                                class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Abhijeet. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/scroll-animations.js"></script>
+    <script>
+        // Analytics - Track page view
+        (function () {
+            fetch('/api/analytics/pageview', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    page: window.location.pathname,
+                    referrer: document.referrer || 'direct'
+                })
+            }).catch(() => { }); // Silently fail if analytics service is down
+        })();
+
+        // Form submission handling
+        document.addEventListener('DOMContentLoaded', function () {
+            const contactForm = document.getElementById('contactForm');
+            const formMessages = document.getElementById('form-messages');
+            const submitBtn = contactForm ? contactForm.querySelector('button[type="submit"]') : null;
+
+            if (contactForm && submitBtn) {
+                contactForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+
+                    // Reset previous messages
+                    formMessages.innerHTML = '';
+                    formMessages.className = '';
+
+                    // Get form data
+                    const formData = new FormData(contactForm);
+                    const formObject = {};
+                    formData.forEach((value, key) => {
+                        formObject[key] = value;
+                    });
+
+                    // Validate form
+                    let isValid = true;
+                    const requiredFields = ['name', 'email', 'subject', 'message'];
+
+                    requiredFields.forEach(field => {
+                        const input = document.getElementById(field);
+                        if (!input.value.trim()) {
+                            showError(input, 'This field is required');
+                            isValid = false;
+                        } else if (field === 'email' && !isValidEmail(input.value)) {
+                            showError(input, 'Please enter a valid email address');
+                            isValid = false;
+                        }
+                    });
+
+                    if (!isValid) return;
+
+                    // Disable submit button and show loading state
+                    submitBtn.disabled = true;
+                    const btnText = submitBtn.querySelector('.btn-text');
+                    const btnIcon = submitBtn.querySelector('.btn-icon');
+
+                    if (btnText) btnText.textContent = 'Sending...';
+                    if (btnIcon) btnIcon.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+
+                    // Send to Contact Microservice via API Gateway
+                    console.log('Sending message to Contact Service...');
+
+                    fetch('/api/contact', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            name: formObject.name,
+                            email: formObject.email,
+                            phone: formObject.phone || '',
+                            subject: formObject.subject,
+                            message: formObject.message,
+                            newsletter: formObject.newsletter ? true : false
+                        })
+                    })
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data.success) {
+                                console.log('SUCCESS!', data);
+                                formMessages.innerHTML = `
+                                <div class="alert alert-success">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>${data.message || "Thank you! I'll get back to you soon."}</span>
+                                </div>
+                            `;
+                                formMessages.className = 'success';
+                                contactForm.reset();
+                            } else {
+                                throw new Error(data.message || 'Unknown error');
+                            }
+                        })
+                        .catch(error => {
+                            console.error('FAILED...', error);
+                            formMessages.innerHTML = `
+                            <div class="alert alert-error">
+                                <i class="fas fa-exclamation-circle"></i>
+                                <span>Oops! Something went wrong. ${error.message}</span>
+                            </div>
+                        `;
+                            formMessages.className = 'error';
+                        })
+                        .finally(() => {
+                            submitBtn.disabled = false;
+                            const btnText = submitBtn.querySelector('.btn-text');
+                            const btnIcon = submitBtn.querySelector('.btn-icon');
+                            if (btnText) btnText.textContent = 'Send Message';
+                            if (btnIcon) btnIcon.innerHTML = '<i class="fas fa-paper-plane"></i>';
+
+                            setTimeout(() => {
+                                formMessages.innerHTML = '';
+                                formMessages.className = '';
+                            }, 7000);
+                        });
+                });
+
+                function isValidEmail(email) {
+                    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+                }
+
+                function showError(input, message) {
+                    const errorMessage = document.createElement('div');
+                    errorMessage.className = 'error-message';
+                    errorMessage.textContent = message;
+                    errorMessage.style.color = '#ef4444';
+                    errorMessage.style.fontSize = '0.875rem';
+                    errorMessage.style.marginTop = '0.25rem';
+
+                    const existingError = input.closest('.input-wrapper').querySelector('.error-message');
+                    if (existingError) { existingError.textContent = message; return; }
+
+                    input.closest('.input-wrapper').appendChild(errorMessage);
+                    input.classList.add('error');
+
+                    input.addEventListener('input', function clearError() {
+                        if (this.value.trim()) {
+                            this.classList.remove('error');
+                            const error = this.closest('.input-wrapper').querySelector('.error-message');
+                            if (error) error.remove();
+                            this.removeEventListener('input', clearError);
+                        }
+                    });
+                }
+            }
+        });
+
+        // Reset form function
+        function resetForm() {
+            const form = document.getElementById('contactForm');
+            const formMessages = document.getElementById('form-messages');
+            form.reset();
+            form.querySelectorAll('.error-message').forEach(error => error.remove());
+            form.querySelectorAll('.error').forEach(input => input.classList.remove('error'));
+            formMessages.innerHTML = '';
+            formMessages.className = '';
+            formMessages.innerHTML = `
+                <div class="alert alert-info">
+                    <i class="fas fa-info-circle"></i>
+                    <span>Form has been cleared.</span>
+                </div>
+            `;
+            formMessages.className = 'info';
+            setTimeout(() => { formMessages.innerHTML = ''; formMessages.className = ''; }, 2000);
+        }
+    </script>
+</body>
+
+</html>

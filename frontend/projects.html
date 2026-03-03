@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Projects - Abhijeet's Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Abhijeet</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="projects.html" class="active">Projects</a>
+                <a href="certificates.html">Certificates</a>
+                <a href="contact.html" class="btn">Contact</a>
+            </div>
+            <button class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Projects Section -->
+    <section class="projects-page">
+        <div class="container">
+            <h1 class="section-title fade-in-up">My Projects</h1>
+            <p class="text-center mb-4 fade-in-up">Here are some of the projects I've worked on. Each project represents a unique challenge I've tackled to create meaningful solutions.</p>
+            
+            <!-- Project Filters -->
+            <div class="project-filters fade-in-up">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+            </div>
+            
+            <!-- Projects Grid -->
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card fade-in-up" data-category="ai">
+                    <div class="project-image">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>AI Language Partner</h3>
+                    <p>An intelligent language learning platform that helps users practice and improve their language skills through AI-powered conversations.</p>
+                    <div class="project-tech">
+                        <span>Flask</span>
+                        <span>Python</span>
+                        <span>Gemini API</span>
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#ai-language-partner" class="btn small primary">View Details</a>
+                        <a href="https://github.com/abhijeetkumar51/Ai-Language-partner/blob/main/Ai%20Language%20partner.py" target="_blank" class="btn small secondary">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card fade-in-up delay-1" data-category="web">
+                    <div class="project-image">
+                        <i class="fas fa-recycle"></i>
+                    </div>
+                    <h3>Plastic Waste Management</h3>
+                    <p>A web application that helps track, manage, and reduce plastic waste through community participation and data visualization.</p>
+                    <div class="project-tech">
+                        <span>HTML5</span>
+                        <span>CSS3</span>
+                        <span>JavaScript</span>
+                        <span>Firebase</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#plastic-waste" class="btn small primary">View Details</a>
+                        <a href="https://github.com/abhijeetkumar51/plastic-Waste/blob/main/plastic_waste.html" target="_blank" class="btn small secondary">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card fade-in-up delay-2" data-category="desktop">
+                    <div class="project-image">
+                        <i class="far fa-clock"></i>
+                    </div>
+                    <h3>Digital Clock App</h3>
+                    <p>A feature-rich digital clock application with multiple time zones, alarms, and customizable themes, built with Java Swing.</p>
+                    <div class="project-tech">
+                        <span>Java</span>
+                        <span>Swing</span>
+                        <span>OOP</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#digital-clock" class="btn small primary">View Details</a>
+                        <a href="https://github.com/abhijeetkumar51/Digital-clock-dark_mode-/blob/main/DigitalClock" target="_blank" class="btn small secondary">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Details Modals -->
+    <div id="project-modals">
+        <!-- AI Language Partner -->
+        <div id="ai-language-partner" class="project-detail">
+            <div class="project-detail-image">
+                <i class="fas fa-robot"></i>
+            </div>
+            <div class="project-detail-content">
+                <h1>AI Language Partner</h1>
+                <div class="project-meta">
+                    <span><i class="far fa-calendar-alt"></i> Jan 2023 - Present</span>
+                    <span><i class="fas fa-code-branch"></i> AI/ML, Web Development</span>
+                    <span><i class="fas fa-users"></i> Solo Project</span>
+                </div>
+                
+                <div class="project-description">
+                    <p>The AI Language Partner is an innovative platform designed to help language learners practice and improve their skills through natural conversations with an AI. The system uses advanced NLP to provide contextual responses, correct grammar, and suggest improvements in real-time.</p>
+                    
+                    <div class="project-features">
+                        <h3>Key Features</h3>
+                        <ul>
+                            <li>Real-time AI-powered conversations in multiple languages</li>
+                            <li>Grammar correction and vocabulary suggestions</li>
+                            <li>Progress tracking and personalized learning paths</li>
+                            <li>Speech recognition for pronunciation practice</li>
+                            <li>Interactive exercises and quizzes</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="project-tech-stack">
+                        <h3>Technologies Used</h3>
+                        <div class="project-tech-tags">
+                            <span>Python</span>
+                            <span>Flask</span>
+                            <span>Gemini API</span>
+                            <span>React</span>
+                            <span>WebSocket</span>
+                            <span>MongoDB</span>
+                            <span>Docker</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-challenges">
+                        <h3>Challenges & Solutions</h3>
+                        <p><strong>Challenge:</strong> Implementing real-time conversation with low latency.<br>
+                        <strong>Solution:</strong> Used WebSocket for bidirectional communication and implemented message queuing for handling multiple concurrent users.</p>
+                        
+                        <p><strong>Challenge:</strong> Providing accurate grammar corrections.<br>
+                        <strong>Solution:</strong> Integrated a combination of rule-based and ML-based grammar checking systems.</p>
+                    </div>
+                </div>
+                
+                <div class="project-links">
+                    <a href="#" target="_blank" class="btn secondary">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Plastic Waste Management -->
+        <div id="plastic-waste" class="project-detail">
+            <div class="project-detail-image">
+                <i class="fas fa-recycle"></i>
+            </div>
+            <div class="project-detail-content">
+                <h1>Plastic Waste Management</h1>
+                <div class="project-meta">
+                    <span><i class="far fa-calendar-alt"></i> Mar 2023 - Jun 2023</span>
+                    <span><i class="fas fa-code-branch"></i> Web Development</span>
+                    <span><i class="fas fa-users"></i> Team Project</span>
+                </div>
+                
+                <div class="project-description">
+                    <p>The Plastic Waste Management system is a comprehensive web application designed to track, manage, and reduce plastic waste through community participation and data visualization. It empowers users and organizations to monitor their plastic footprint and contribute to a cleaner environment.</p>
+                    
+                    <div class="project-features">
+                        <h3>Key Features</h3>
+                        <ul>
+                            <li>Waste tracking and reporting system</li>
+                            <li>Interactive data visualization dashboard</li>
+                            <li>Community challenges and rewards</li>
+                            <li>Recycling center locator</li>
+                            <li>Educational resources on plastic waste reduction</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="project-tech-stack">
+                        <h3>Technologies Used</h3>
+                        <div class="project-tech-tags">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>JavaScript</span>
+                            <span>Firebase</span>
+                            <span>Chart.js</span>
+                            <span>Google Maps API</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-challenges">
+                        <h3>Challenges & Solutions</h3>
+                        <p><strong>Challenge:</strong> Real-time data synchronization across multiple users.<br>
+                        <strong>Solution:</strong> Implemented Firebase Realtime Database for instant data updates and offline support.</p>
+                        
+                        <p><strong>Challenge:</strong> Creating an intuitive user interface for data visualization.<br>
+                        <strong>Solution:</strong> Utilized Chart.js for responsive and interactive data visualizations with a mobile-first approach.</p>
+                    </div>
+                </div>
+                
+                <div class="project-links">
+                    <a href="https://github.com/abhijeetkumar51/plastic-Waste/blob/main/plastic_waste.html" target="_blank" class="btn secondary">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Digital Clock App -->
+        <div id="digital-clock" class="project-detail">
+            <div class="project-detail-image">
+                <i class="far fa-clock"></i>
+            </div>
+            <div class="project-detail-content">
+                <h1>Digital Clock App</h1>
+                <div class="project-meta">
+                    <span><i class="far fa-calendar-alt"></i> Oct 2022 - Dec 2022</span>
+                    <span><i class="fas fa-code-branch"></i> Desktop Application</span>
+                    <span><i class="fas fa-users"></i> Solo Project</span>
+                </div>
+                
+                <div class="project-description">
+                    <p>A feature-rich digital clock application with multiple time zones, alarms, and customizable themes. Built with Java Swing, this desktop application provides a clean and intuitive interface for time management across different time zones.</p>
+                    
+                    <div class="project-features">
+                        <h3>Key Features</h3>
+                        <ul>
+                            <li>Multiple time zone display</li>
+                            <li>Customizable alarm system with multiple alarms</li>
+                            <li>Stopwatch and countdown timer</li>
+                            <li>Customizable themes and display formats</li>
+                            <li>Minimal system resource usage</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="project-tech-stack">
+                        <h3>Technologies Used</h3>
+                        <div class="project-tech-tags">
+                            <span>Java</span>
+                            <span>Java Swing</span>
+                            <span>OOP</span>
+                            <span>Maven</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-challenges">
+                        <h3>Challenges & Solutions</h3>
+                        <p><strong>Challenge:</strong> Implementing accurate timekeeping across different time zones.<br>
+                        <strong>Solution:</strong> Utilized Java's built-in TimeZone and Calendar classes to handle time zone conversions and DST changes.</p>
+                        
+                        <p><strong>Challenge:</strong> Creating a responsive and modern UI with Swing.<br>
+                        <strong>Solution:</strong> Implemented custom UI components and a theme system to enhance the default Swing look and feel.</p>
+                    </div>
+                </div>
+                
+                <div class="project-links">
+                    <a href="https://github.com/abhijeet-ak/digital-clock-app" target="_blank" class="btn secondary">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <h3>Abhijeet</h3>
+                    <p>Full-Stack Developer passionate about creating beautiful, functional web applications.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <!-- <li><a href="projects.html">Projects</a></li> -->
+                        <li><a href="certificates.html">Certificates</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Get In Touch</h4>
+                    <p><i class="fas fa-envelope"></i> chaudharyabhijeet51@gmail.com</p>
+                    <div class="social-links">
+                        <a href="#" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Abhijeet. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Project filtering functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const projectCards = document.querySelectorAll('.project-card');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Add active class to clicked button
+                    button.classList.add('active');
+                    
+                    const filterValue = button.getAttribute('data-filter');
+                    
+                    projectCards.forEach(card => {
+                        if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                            card.style.display = 'flex';
+                            setTimeout(() => {
+                                card.style.opacity = '1';
+                                card.style.transform = 'translateY(0)';
+                            }, 50);
+                        } else {
+                            card.style.opacity = '0';
+                            card.style.transform = 'translateY(20px)';
+                            setTimeout(() => {
+                                card.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                });
+            });
+            
+            // Handle project detail modal
+            const projectLinks = document.querySelectorAll('.project-links .btn.primary');
+            const projectModals = document.getElementById('project-modals');
+            
+            projectLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('href');
+                    const targetModal = document.querySelector(targetId);
+                    
+                    if (targetModal) {
+                        // Hide all modals first
+                        document.querySelectorAll('.project-detail').forEach(modal => {
+                            modal.style.display = 'none';
+                        });
+                        
+                        // Show the target modal
+                        targetModal.style.display = 'block';
+                        
+                        // Scroll to the modal
+                        targetModal.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

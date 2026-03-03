@@ -1,0 +1,58 @@
+version: '3.8'
+
+services:
+  # ============================================
+  # API Gateway - Routes traffic to services
+  # ============================================
+  gateway:
+    build: ./gateway
+    container_name: portfolio-gateway
+    ports:
+      - "80:80"
+    depends_on:
+      - frontend
+      - contact-service
+      - analytics-service
+    networks:
+      - portfolio-network
+    restart: unless-stopped
+
+  # ============================================
+  # Frontend Service - Static portfolio files
+  # ============================================
+  frontend:
+    build: ./frontend
+    container_name: portfolio-frontend
+    networks:
+      - portfolio-network
+    restart: unless-stopped
+
+  # ============================================
+  # Contact Service - Handles contact form
+  # ============================================
+  contact-service:
+    build: ./contact-service
+    container_name: portfolio-contact
+    environment:
+      - PORT=3001
+      - EMAIL_USER=${EMAIL_USER:-chaudharyabhijeet51@gmail.com}
+      - EMAIL_PASS=${EMAIL_PASS:-your_app_password_here}
+    networks:
+      - portfolio-network
+    restart: unless-stopped
+
+  # ============================================
+  # Analytics Service - Tracks page views
+  # ============================================
+  analytics-service:
+    build: ./analytics-service
+    container_name: portfolio-analytics
+    environment:
+      - PORT=3002
+    networks:
+      - portfolio-network
+    restart: unless-stopped
+
+networks:
+  portfolio-network:
+    driver: bridge

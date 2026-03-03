@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Abhijeet's Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+        /* Add smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Profile picture hover effect */
+        .profile-pic {
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .profile-pic:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Skill tags animation */
+        .skill-tag {
+            transition: all 0.3s ease;
+            transform: translateY(0);
+            display: inline-block;
+        }
+        
+        .skill-tag:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Timeline item hover effect */
+        .timeline-content {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background: #fff;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .timeline-item:hover .timeline-content {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Button hover effect */
+        .btn {
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .btn:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #4a6cf7;
+            z-index: -2;
+        }
+        
+        .btn:before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0%;
+            height: 100%;
+            background-color: #3a56d0;
+            transition: all 0.3s;
+            z-index: -1;
+        }
+        
+        .btn:hover {
+            color: #fff;
+        }
+        
+        .btn:hover:before {
+            width: 100%;
+        }
+        
+        /* Social icons hover effect */
+        .social-links a {
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #f5f5f5;
+            margin-right: 10px;
+            color: #333;
+        }
+        
+        .social-links a:hover {
+            transform: translateY(-5px) scale(1.1);
+            color: #fff;
+            background: #4a6cf7;
+        }
+        
+        /* Section title animation */
+        .section-title {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 40px;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            background: #4a6cf7;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: all 0.3s ease;
+        }
+        
+        .section-title:hover:after {
+            width: 100px;
+        }
+        
+        /* Info item hover effect */
+        .info-item {
+            transition: all 0.3s ease;
+            padding: 8px 0;
+            border-bottom: 1px dashed #eee;
+        }
+        
+        .info-item:hover {
+            padding-left: 10px;
+            border-color: #4a6cf7;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .about-image {
+                margin-bottom: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Abhijeet</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <!-- <a href="about.html" class="active">About</a> -->
+                <a href="projects.html">Projects</a>
+                <a href="certificates.html">Certificates</a>
+                <a href="contact.html" class="btn">Contact</a>
+            </div>
+            <button class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="container">
+            <h1 class="section-title" data-aos="fade-up">About Me</h1>
+            <div class="about-content">
+                <div class="about-image" data-aos="fade-right" data-aos-delay="100">
+                    <img src="A.jpg" alt="Abhijeet Kumar" class="profile-pic">
+                </div>
+                <div class="about-text fade-in-up" data-aos="fade-left" data-aos-delay="200">
+                    <h2>Cloud, Devops Engineer & Full-Stack Developer AI Enthusiast</h2>
+                    <p>Hello! I'm Abhijeet, Aspiring Cloud & Devops Engineer a passionate Full-Stack Developer with expertise in building robust web applications and AI solutions. With a strong foundation in both front-end and back-end development, I specialize in creating efficient, scalable, and user-friendly applications.</p>
+                    <p>I have hands-on experience with modern technologies including Docker Git, React, Flask, Python, and various databases. My journey in technology is driven by a curiosity to solve real-world problems through innovative solutions.</p>
+                    <p>When I'm not coding, I enjoy contributing to open-source projects, learning new technologies, and sharing knowledge with the developer community.</p>
+                    
+                    <div class="personal-info">
+                        <div class="info-item">
+                            <span class="info-label">Name:</span>
+                            <span>Abhijeet Kumar </span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Email:</span>
+                            <a href="mailto:chaudharyabhijeet51@gmail.com">chaudharyabhijeet51@gmail.com</a>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Phone:</span>
+                            <span>+91 7903668571</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Location:</span>
+                            <span>Bihar, India</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">LinkedIn:</span>
+                            <a href="https://www.linkedin.com/in/abhijeet-kumar51/" target="_blank">linkedin.com/in/abhijeet-kumar</a>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">GitHub:</span>
+                            <a href="https://github.com/abhijeetkumar51" target="_blank">github.com/abhijeet-kumar</a>
+                        </div>
+                    </div>
+                    
+                    <a href="https://drive.google.com/file/d/1ppvHLVgj3MIGPu3gB_N96bayAxmkIxNv/view?usp=sharing" class="btn primary mt-3" download>
+                        <i class="fas fa-download"></i> Download CV
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+        <div class="container">
+            <h2 class="section-title fade-in-up">My Skills</h2>
+            <div class="skills-container">
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
+                    <h3>Frontend Development</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">HTML5</span>
+                        <span class="skill-tag">CSS3</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">React.js</span>
+                        <span class="skill-tag">Responsive Design</span>
+                        <span class="skill-tag">Bootstrap</span>
+                        <span class="skill-tag">Tailwind CSS</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
+                    <h3>Backend Development</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Flask</span>
+                        <span class="skill-tag">RESTful APIs</span>
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">Express.js</span>
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">MongoDB</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="300">
+                    <h3>Tools & Others</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Git & GitHub</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">C++</span>
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">Linux</span>
+                        <span class="skill-tag">AWS Basics</span>
+                        <span class="skill-tag">CI/CD</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience & Education -->
+    <section class="timeline-section">
+        <div class="container">
+            <h2 class="section-title fade-in-up">Experience & Education</h2>
+            <div class="timeline">
+                <!-- Experience -->
+                <div class="timeline-item left" data-aos="fade-right">
+                    <div class="timeline-content">
+                        <h3>Full Stack Developer Intern</h3>
+                        <span class="date">Mar 2024 - Present</span>
+                        <p>Docker Project (Remote)</p>
+                        <ul>
+                            <li>Developed and deployed containerized applications using Docker</li>
+                            <li>Implemented CI/CD pipelines for automated testing and deployment</li>
+                            <li>Collaborated with cross-functional teams to optimize application performance</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item right" data-aos="fade-left" data-aos-delay="100">
+                    <div class="timeline-content">
+                        <h3>AI Language Partner Project</h3>
+                        <span class="date">2023 - 2024</span>
+                        <p>Developed an AI-powered language learning platform</p>
+                        <ul>
+                            <li>Built using Flask and integrated with Gemini API</li>
+                            <li>Implemented user authentication and progress tracking</li>
+                            <li>Created interactive exercises and real-time feedback system</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Education -->
+                <div class="timeline-item left" data-aos="fade-right" data-aos-delay="200">
+                    <div class="timeline-content">
+                        <h3>B.Tech in Computer Science & Engineering</h3>
+                        <span class="date">2023 - Present</span>
+                        <p>Lovely Professional University, Phagwara, Punjab</p>
+                        <ul>
+                            <li>CGPA: 7.2/10</li>
+                            <li>Relevant Coursework: Data Structures, Algorithms, DBMS, OOPS, Computer Networks, Operating Systems</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item right" data-aos="fade-left" data-aos-delay="300">
+                    <div class="timeline-content">
+                        <h3>Higher Secondary Education (12th)</h3>
+                        <span class="date">2020 - 2022</span>
+                        <p>Saryug Mahavidyalaya, Bihar</p>
+                        <ul>
+                            <li>Percentage: 72%</li>
+                            <li>Major: Physics, Chemistry, and Mathematics</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item left" data-aos="fade-right" data-aos-delay="400">
+                    <div class="timeline-content">
+                        <h3>Secondary Education (10th)</h3>
+                        <span class="date">2019 - 2020</span>
+                        <p>C.B.S.E., Samastipur, Bihar</p>
+                        <ul>
+                            <li>Percentage: 69%</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <h2>Abhijeet Choudhary</h2>
+                    <p>Cloud, Devops & Full-Stack Developer passionate about creating beautiful, functional web applications.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="certificates.html">Certificates</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Get In Touch</h4>
+                    <p><i class="fas fa-envelope"></i> chaudharyabhijeet51@gmail.com</p>
+                    <div class="social-links">
+                        <a href="https://github.com/abhijeetchy51" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/abhijeetkumar51/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com/abhijeet_br.33/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Abhijeet. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        // Initialize AOS (Animate On Scroll)
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            mirror: false
+        });
+        
+        // Add smooth scroll to all links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Add scroll reveal animation to sections
+        window.addEventListener('scroll', revealOnScroll);
+        
+        function revealOnScroll() {
+            const elements = document.querySelectorAll('.fade-in-up');
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                if (elementTop < windowHeight - 100) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        }
+        
+        // Initial call to reveal elements in view on page load
+        revealOnScroll();
+    </script>
+    <script src="js/script.js"></script>
+</body>
+</html>
