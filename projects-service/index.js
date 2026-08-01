@@ -160,36 +160,6 @@ const projects = [
                 { title: 'Automating multi-choice evaluation and score calculation.', solution: 'Designed relational database schemas and automated evaluation logic for instant grade reporting.' }
             ]
         }
-    },
-    {
-        id: 'digital-clock',
-        title: 'Digital Clock App',
-        description: 'A feature-rich digital clock application with multiple time zones, alarms, and customizable themes, built with Java Swing.',
-        category: 'desktop',
-        icon: 'far fa-clock',
-        image: 'images/digital-clock.png',
-        tech: ['Java', 'Swing', 'OOP'],
-        links: {
-            github: 'https://github.com/abhijeetkumar51/Digital-clock-dark_mode'
-        },
-        details: {
-            date: 'Oct 2022 - Dec 2022',
-            type: 'Desktop Application',
-            teamStatus: 'Solo Project',
-            longDescription: 'A feature-rich digital clock application with multiple time zones, alarms, and customizable themes. Built with Java Swing, this desktop application provides a clean and intuitive interface for time management across different time zones.',
-            features: [
-                'Multiple time zone display',
-                'Customizable alarm system with multiple alarms',
-                'Stopwatch and countdown timer',
-                'Customizable themes and display formats',
-                'Minimal system resource usage'
-            ],
-            detailedTech: ['Java', 'Java Swing', 'OOP'],
-            challenges: [
-                { title: 'Implementing accurate timekeeping across different time zones.', solution: 'Utilized Java\'s built-in TimeZone and Calendar classes to handle time zone conversions and DST changes.' },
-                { title: 'Creating a responsive and modern UI with Swing.', solution: 'Implemented custom UI components and a theme system to enhance the default Swing look and feel.' }
-            ]
-        }
     }
 ];
 
