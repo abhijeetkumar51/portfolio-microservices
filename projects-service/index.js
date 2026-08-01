@@ -125,6 +125,36 @@ const projects = [
         }
     },
     {
+        id: 'expense-tracker',
+        title: 'Expense Tracker',
+        description: 'A full-stack Expense Tracker application for real-time income & expense management, category analytics, and personal budget tracking.',
+        category: 'web',
+        icon: 'fas fa-wallet',
+        tech: ['React', 'Node.js', 'Express', 'MongoDB', 'Tailwind CSS'],
+        links: {
+            github: 'https://github.com/abhijeetkumar51/Expense-Tracker',
+            live: 'https://expense-tracker-ten-murex-80.vercel.app/'
+        },
+        details: {
+            date: 'Jan 2025',
+            type: 'Full-Stack Web Development',
+            teamStatus: 'Solo Project',
+            longDescription: 'Developed a full-stack Expense Tracker web application built with React and Node.js. Designed to help users track daily income and expenses, monitor category-wise spending habits, visualize budget analytics, and maintain financial logs securely. Deployed live on Vercel.',
+            features: [
+                'Real-time income and expense tracking with custom category tagging',
+                'Interactive financial breakdown dashboard and budget analytics',
+                'Secure user authentication and multi-user session management',
+                'Responsive modern interface designed for mobile and desktop screens',
+                'Production deployment on Vercel with cloud REST API integration'
+            ],
+            detailedTech: ['React', 'Node.js', 'Express', 'MongoDB', 'Tailwind CSS', 'Vercel'],
+            challenges: [
+                { title: 'Designing dynamic financial calculation and real-time state management.', solution: 'Engineered modular React components with context API state management for immediate UI reactivity.' },
+                { title: 'Ensuring seamless cloud deployment with client-side routing.', solution: 'Configured single-page app redirection rules and deployed frontend to Vercel connected with RESTful API services.' }
+            ]
+        }
+    },
+    {
         id: 'digital-clock',
         title: 'Digital Clock App',
         description: 'A feature-rich digital clock application with multiple time zones, alarms, and customizable themes, built with Java Swing.',
