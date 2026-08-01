@@ -126,6 +126,35 @@ const projects = [
         }
     },
     {
+        id: 'online-exam-system',
+        title: 'Online Exam System',
+        description: 'An automated Online Exam System designed for conducting online examinations, timer management, automated scoring, and student performance tracking.',
+        category: 'web',
+        icon: 'fas fa-file-signature',
+        tech: ['Java', 'JSP', 'Servlet', 'MySQL', 'HTML', 'CSS'],
+        links: {
+            github: 'https://github.com/abhijeetkumar51/Online_Exam_System'
+        },
+        details: {
+            date: 'May 2024',
+            type: 'Web Development & Java',
+            teamStatus: 'Solo Project',
+            longDescription: 'Developed a web-based Online Exam System designed to streamline online assessments, candidate registration, time-bound test execution, automated evaluation, and result management. Implemented secure user authentication for administrators and students, dynamic question rendering, and real-time score reporting.',
+            features: [
+                'Automated online test execution with countdown timers',
+                'User authentication and role-based access for students and administrators',
+                'Dynamic question generation and automated instant evaluation',
+                'Real-time result generation and performance tracking dashboard',
+                'Input validation and secure session handling'
+            ],
+            detailedTech: ['Java', 'Servlets', 'JSP', 'MySQL', 'HTML5', 'CSS3', 'JavaScript'],
+            challenges: [
+                { title: 'Managing exam timers and preventing accidental submissions.', solution: 'Engineered client-side and server-side timer synchronization with automatic submission upon timeout.' },
+                { title: 'Automating multi-choice evaluation and score calculation.', solution: 'Designed relational database schemas and automated evaluation logic for instant grade reporting.' }
+            ]
+        }
+    },
+    {
         id: 'digital-clock',
         title: 'Digital Clock App',
         description: 'A feature-rich digital clock application with multiple time zones, alarms, and customizable themes, built with Java Swing.',
