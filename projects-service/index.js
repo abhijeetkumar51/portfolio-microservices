@@ -11,31 +11,59 @@ app.use(express.json());
 // Hardcoded projects data based on the original frontend
 const projects = [
     {
-        id: 'ai-language-partner',
-        title: 'AI Language Partner',
-        description: 'An intelligent language learning platform that helps users practice and improve their language skills through AI-powered conversations.',
+        id: 'ai-resume-analyzer',
+        title: 'AI-Powered ATS Resume Analyzer',
+        description: 'Developed an AI-powered ATS Resume Analyzer using Flask and Groq AI for resume-job matching.',
         category: 'ai',
-        icon: 'fas fa-robot',
-        tech: ['Flask', 'Python', 'Gemini API', 'JavaScript'],
+        icon: 'fas fa-file-alt',
+        tech: ['Flask', 'Groq AI', 'Docker', 'GitHub Actions', 'HTML', 'CSS'],
         links: {
-            github: 'https://github.com/abhijeetkumar51/Ai-Language-partner/blob/main/Ai%20Language%20partner.py'
+            github: 'https://github.com/abhijeetkumar51/ai-resume-analyzer',
+            live: 'https://ai-resume-analyzer-oe74.onrender.com'
         },
         details: {
-            date: 'Jan 2023 - Present',
+            date: 'Mar 2026',
+            type: 'AI/ML, DevOps',
+            teamStatus: 'Solo Project',
+            longDescription: 'Developed an AI-powered ATS Resume Analyzer using Flask and Groq AI for resume-job matching. Engineered PDF text extraction and automated ATS score generation with skill-gap analysis. Containerized the application using Docker and integrated GitHub Actions for CI/CD automation. Optimized deployment scalability through environment-based API management and cloud-ready setup.',
+            features: [
+                'Developed an AI-powered ATS Resume Analyzer using Flask and Groq AI for resume-job matching.',
+                'Engineered PDF text extraction and automated ATS score generation with skill-gap analysis.',
+                'Containerized the application using Docker and integrated GitHub Actions for CI/CD automation.',
+                'Optimized deployment scalability through environment-based API management and cloud-ready setup.'
+            ],
+            detailedTech: ['Flask', 'Groq AI', 'Docker', 'GitHub Actions', 'HTML', 'CSS'],
+            challenges: [
+                { title: 'Implementing accurate ATS scoring algorithm & PDF parsing.', solution: 'Engineered text extraction pipeline and utilized Groq AI for resume-job matching and skill-gap analysis.' },
+                { title: 'Optimizing deployment scalability.', solution: 'Containerized application with Docker, integrated GitHub Actions CI/CD automation, and setup environment-based API management.' }
+            ]
+        }
+    },
+    {
+        id: 'ai-language-partner',
+        title: 'AI-Language partner',
+        description: 'Designed an AI-driven language learning platform supporting contextual conversations and personalized learning experiences.',
+        category: 'ai',
+        icon: 'fas fa-robot',
+        tech: ['Python', 'HTML', 'CSS', 'Gemini API', 'MySQL'],
+        links: {
+            github: 'https://github.com/abhijeetkumar51/Ai-Language-partner'
+        },
+        details: {
+            date: 'Jul 2025',
             type: 'AI/ML, Web Development',
             teamStatus: 'Solo Project',
-            longDescription: 'The AI Language Partner is an innovative platform designed to help language learners practice and improve their skills through natural conversations with an AI. The system uses advanced NLP to provide contextual responses, correct grammar, and suggest improvements in real-time.',
+            longDescription: 'Designed an AI-driven language learning platform supporting contextual conversations and personalized learning experiences. Integrated Speech-to-Text and Text-to-Speech functionalities using AI APIs to enhance accessibility and interaction flow. Architected backend services using Python, Flask, and MySQL for efficient session handling and conversation management. Enhanced contextual response accuracy through prompt engineering techniques and Gemini AI-based conversational integration.',
             features: [
-                'Real-time AI-powered conversations in multiple languages',
-                'Grammar correction and vocabulary suggestions',
-                'Progress tracking and personalized learning paths',
-                'Speech recognition for pronunciation practice',
-                'Interactive exercises and quizzes'
+                'Designed an AI-driven language learning platform supporting contextual conversations and personalized learning experiences.',
+                'Integrated Speech-to-Text and Text-to-Speech functionalities using AI APIs to enhance accessibility and interaction flow.',
+                'Architected backend services using Python, Flask, and MySQL for efficient session handling and conversation management.',
+                'Enhanced contextual response accuracy through prompt engineering techniques and Gemini AI-based conversational integration.'
             ],
-            detailedTech: ['Python', 'Flask', 'Gemini API', 'Docker'],
+            detailedTech: ['Python', 'Flask', 'HTML', 'CSS', 'Gemini API', 'MySQL'],
             challenges: [
-                { title: 'Implementing real-time conversation with low latency.', solution: 'Used WebSocket for bidirectional communication and implemented message queuing for handling multiple concurrent users.' },
-                { title: 'Providing accurate grammar corrections.', solution: 'Integrated a combination of rule-based and ML-based grammar checking systems.' }
+                { title: 'Integrating speech interaction flow seamlessly.', solution: 'Integrated Speech-to-Text and Text-to-Speech functionalities using AI APIs for interactive user flow.' },
+                { title: 'Maintaining contextual response accuracy.', solution: 'Utilized prompt engineering techniques alongside Gemini AI conversational integration and MySQL session handling.' }
             ]
         }
     },
@@ -47,10 +75,10 @@ const projects = [
         icon: 'fas fa-recycle',
         tech: ['HTML5', 'CSS3', 'JavaScript'],
         links: {
-            github: 'https://github.com/abhijeetkumar51/plastic-Waste/blob/main/plastic_waste.html'
+            github: 'https://github.com/abhijeetkumar51/plastic-Waste'
         },
         details: {
-            date: 'Mar 2023 - Jun 2023',
+            date: 'Nov 2024',
             type: 'Web Development',
             teamStatus: 'Team Project',
             longDescription: 'The Plastic Waste Management system is a comprehensive web application designed to track, manage, and reduce plastic waste through community participation and data visualization. It empowers users and organizations to monitor their plastic footprint and contribute to a cleaner environment.',
@@ -69,6 +97,34 @@ const projects = [
         }
     },
     {
+        id: 'grade-calculator',
+        title: 'Grade Calculator',
+        description: 'Built a dual-mode Grade Calculator — a Java console application and a responsive web application to compute SGPA and CGPA using a credit-based 10-point grading scale.',
+        category: 'web',
+        icon: 'fas fa-calculator',
+        tech: ['Java', 'HTML', 'CSS', 'JS'],
+        links: {
+            github: 'https://github.com/abhijeetkumar51/Grade-calculator'
+        },
+        details: {
+            date: 'Apr 2024',
+            type: 'Java & Web Development',
+            teamStatus: 'Solo Project',
+            longDescription: 'Built a dual-mode Grade Calculator — a Java console application and a responsive web application to compute SGPA and CGPA using a credit-based 10-point grading scale. Implemented SGPA formula Σ(Grade Point × Credits) / Σ(Credits) and CGPA as average of all semester SGPAs, supporting unlimited students and semesters. Applied a modern web interface using vanilla HTML, CSS, and JavaScript featuring dark glassmorphism UI, animated CGPA ring charts, colour-coded grade badges, and toast notifications. Improved input validation, real-time feedback, and error handling to ensure accurate grade data entry.',
+            features: [
+                'Built a dual-mode Grade Calculator — a Java console application and a responsive web application to compute SGPA and CGPA using a credit-based 10-point grading scale.',
+                'Implemented SGPA formula Σ(Grade Point × Credits) / Σ(Credits) and CGPA as average of all semester SGPAs, supporting unlimited students and semesters.',
+                'Applied a modern web interface using vanilla HTML, CSS, and JavaScript featuring dark glassmorphism UI, animated CGPA ring charts, colour-coded grade badges, and toast notifications.',
+                'Improved input validation, real-time feedback, and error handling to ensure accurate grade data entry.'
+            ],
+            detailedTech: ['Java', 'HTML', 'CSS', 'JS'],
+            challenges: [
+                { title: 'Implementing credit-weighted SGPA & CGPA math across dynamic semester structures.', solution: 'Engineered mathematical formulas in both Java console backend and JS frontend supporting unlimited students and semesters.' },
+                { title: 'Building a modern responsive glassmorphism interface with dynamic visualizations.', solution: 'Applied custom CSS dark glassmorphism UI styling, animated CGPA ring charts, colour-coded grade badges, and interactive toast notifications.' }
+            ]
+        }
+    },
+    {
         id: 'digital-clock',
         title: 'Digital Clock App',
         description: 'A feature-rich digital clock application with multiple time zones, alarms, and customizable themes, built with Java Swing.',
@@ -76,7 +132,7 @@ const projects = [
         icon: 'far fa-clock',
         tech: ['Java', 'Swing', 'OOP'],
         links: {
-            github: 'https://github.com/abhijeetkumar51/Digital-clock-dark_mode-/blob/main/DigitalClock'
+            github: 'https://github.com/abhijeetkumar51/Digital-clock-dark_mode'
         },
         details: {
             date: 'Oct 2022 - Dec 2022',
