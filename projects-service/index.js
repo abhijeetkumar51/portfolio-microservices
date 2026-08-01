@@ -68,35 +68,6 @@ const projects = [
         }
     },
     {
-        id: 'plastic-waste',
-        title: 'Plastic Waste Management',
-        description: 'A web application that helps track, manage, and reduce plastic waste through community participation and data visualization.',
-        category: 'web',
-        icon: 'fas fa-recycle',
-        tech: ['HTML5', 'CSS3', 'JavaScript'],
-        links: {
-            github: 'https://github.com/abhijeetkumar51/plastic-Waste'
-        },
-        details: {
-            date: 'Nov 2024',
-            type: 'Web Development',
-            teamStatus: 'Team Project',
-            longDescription: 'The Plastic Waste Management system is a comprehensive web application designed to track, manage, and reduce plastic waste through community participation and data visualization. It empowers users and organizations to monitor their plastic footprint and contribute to a cleaner environment.',
-            features: [
-                'Waste tracking and reporting system',
-                'Interactive data visualization dashboard',
-                'Community challenges and rewards',
-                'Recycling center locator',
-                'Educational resources on plastic waste reduction'
-            ],
-            detailedTech: ['HTML5', 'CSS3', 'JavaScript'],
-            challenges: [
-                { title: 'Real-time data synchronization across multiple users.', solution: 'Implemented Firebase Realtime Database for instant data updates and offline support.' },
-                { title: 'Creating an intuitive user interface for data visualization.', solution: 'Utilized Chart.js for responsive and interactive data visualizations with a mobile-first approach.' }
-            ]
-        }
-    },
-    {
         id: 'grade-calculator',
         title: 'Grade Calculator',
         description: 'Built a dual-mode Grade Calculator — a Java console application and a responsive web application to compute SGPA and CGPA using a credit-based 10-point grading scale.',
