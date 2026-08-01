@@ -101,18 +101,190 @@
     <script src="js/scroll-animations.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            // Fetch projects from Microservice
-            fetch('/api/projects')
-                .then(response => response.json())
-                .then(projects => {
-                    renderProjects(projects);
-                    renderModals(projects);
-                    initFilteringAndModals();
-                })
-                .catch(error => {
-                    console.error('Error fetching projects:', error);
-                    document.getElementById('projectsGrid').innerHTML = '<p class="text-center w-100 error">Failed to load projects. Please try again later.</p>';
-                });
+            const fallbackProjects = [
+                {
+                    id: 'ai-resume-analyzer',
+                    title: 'AI-Powered ATS Resume Analyzer',
+                    description: 'Developed an AI-powered ATS Resume Analyzer using Flask and Groq AI for resume-job matching.',
+                    category: 'ai',
+                    icon: 'fas fa-file-alt',
+                    tech: ['Flask', 'Groq AI', 'Docker', 'GitHub Actions', 'HTML', 'CSS'],
+                    links: {
+                        github: 'https://github.com/abhijeetkumar51/ai-resume-analyzer',
+                        live: 'https://ai-resume-analyzer-oe74.onrender.com'
+                    },
+                    details: {
+                        date: 'Mar 2026',
+                        type: 'AI/ML, DevOps',
+                        teamStatus: 'Solo Project',
+                        longDescription: 'Developed an AI-powered ATS Resume Analyzer using Flask and Groq AI for resume-job matching. Engineered PDF text extraction and automated ATS score generation with skill-gap analysis. Containerized the application using Docker and integrated GitHub Actions for CI/CD automation.',
+                        features: [
+                            'AI-powered resume-job matching using Groq AI',
+                            'PDF text extraction and parsing',
+                            'Automated ATS score generation',
+                            'Skill-gap analysis and recommendations',
+                            'Docker containerization and GitHub Actions CI/CD'
+                        ],
+                        detailedTech: ['Flask', 'Groq AI', 'Docker', 'GitHub Actions', 'HTML', 'CSS'],
+                        challenges: [
+                            { title: 'Implementing accurate ATS scoring algorithm & PDF parsing.', solution: 'Engineered text extraction pipeline and utilized Groq AI for resume-job matching and skill-gap analysis.' }
+                        ]
+                    }
+                },
+                {
+                    id: 'ai-language-partner',
+                    title: 'AI-Language partner',
+                    description: 'Designed an AI-driven language learning platform supporting contextual conversations and personalized learning experiences.',
+                    category: 'ai',
+                    icon: 'fas fa-robot',
+                    tech: ['Python', 'HTML', 'CSS', 'Gemini API', 'MySQL'],
+                    links: {
+                        github: 'https://github.com/abhijeetkumar51/Ai-Language-partner'
+                    },
+                    details: {
+                        date: 'Jul 2025',
+                        type: 'AI/ML, Web Development',
+                        teamStatus: 'Solo Project',
+                        longDescription: 'Designed an AI-driven language learning platform supporting contextual conversations and personalized learning experiences. Integrated Speech-to-Text and Text-to-Speech functionalities using AI APIs to enhance accessibility and interaction flow.',
+                        features: [
+                            'Real-time AI-powered conversations',
+                            'Integrated Speech-to-Text and Text-to-Speech functionalities using AI APIs',
+                            'Python, Flask, and MySQL session architecture'
+                        ],
+                        detailedTech: ['Python', 'Flask', 'HTML', 'CSS', 'Gemini API', 'MySQL'],
+                        challenges: [
+                            { title: 'Integrating speech interaction flow seamlessly.', solution: 'Integrated Speech-to-Text and Text-to-Speech functionalities using AI APIs for interactive user flow.' }
+                        ]
+                    }
+                },
+                {
+                    id: 'expense-tracker',
+                    title: 'Expense Tracker',
+                    description: 'A full-stack Expense Tracker application for real-time income & expense management, category analytics, and personal budget tracking.',
+                    category: 'web',
+                    icon: 'fas fa-wallet',
+                    tech: ['React', 'Node.js', 'Express', 'MongoDB', 'Tailwind CSS'],
+                    links: {
+                        github: 'https://github.com/abhijeetkumar51/Expense-Tracker',
+                        live: 'https://expense-tracker-ten-murex-80.vercel.app/'
+                    },
+                    details: {
+                        date: 'Jan 2025',
+                        type: 'Full-Stack Web Development',
+                        teamStatus: 'Solo Project',
+                        longDescription: 'Developed a full-stack Expense Tracker web application built with React and Node.js. Designed to help users track daily income and expenses, monitor category-wise spending habits, visualize budget analytics, and maintain financial logs securely. Deployed live on Vercel.',
+                        features: [
+                            'Real-time income and expense tracking with custom category tagging',
+                            'Interactive financial breakdown dashboard and budget analytics',
+                            'Secure user authentication and multi-user session management',
+                            'Responsive modern interface designed for mobile and desktop screens',
+                            'Production deployment on Vercel with cloud REST API integration'
+                        ],
+                        detailedTech: ['React', 'Node.js', 'Express', 'MongoDB', 'Tailwind CSS', 'Vercel'],
+                        challenges: [
+                            { title: 'Designing dynamic financial calculation and real-time state management.', solution: 'Engineered modular React components with context API state management for immediate UI reactivity.' }
+                        ]
+                    }
+                },
+                {
+                    id: 'plastic-waste',
+                    title: 'Plastic Waste Management',
+                    description: 'A web application that helps track, manage, and reduce plastic waste through community participation and data visualization.',
+                    category: 'web',
+                    icon: 'fas fa-recycle',
+                    tech: ['HTML5', 'CSS3', 'JavaScript'],
+                    links: {
+                        github: 'https://github.com/abhijeetkumar51/plastic-Waste'
+                    },
+                    details: {
+                        date: 'Nov 2024',
+                        type: 'Web Development',
+                        teamStatus: 'Team Project',
+                        longDescription: 'The Plastic Waste Management system is a comprehensive web application designed to track, manage, and reduce plastic waste through community participation and data visualization.',
+                        features: [
+                            'Waste tracking and reporting system',
+                            'Interactive data visualization dashboard',
+                            'Community challenges and rewards'
+                        ],
+                        detailedTech: ['HTML5', 'CSS3', 'JavaScript'],
+                        challenges: [
+                            { title: 'Real-time data synchronization across multiple users.', solution: 'Implemented Firebase Realtime Database for instant data updates and offline support.' }
+                        ]
+                    }
+                },
+                {
+                    id: 'grade-calculator',
+                    title: 'Grade Calculator',
+                    description: 'Built a dual-mode Grade Calculator — a Java console application and a responsive web application to compute SGPA and CGPA using a credit-based 10-point grading scale.',
+                    category: 'web',
+                    icon: 'fas fa-calculator',
+                    tech: ['Java', 'HTML', 'CSS', 'JS'],
+                    links: {
+                        github: 'https://github.com/abhijeetkumar51/Grade-calculator'
+                    },
+                    details: {
+                        date: 'Apr 2024',
+                        type: 'Java & Web Development',
+                        teamStatus: 'Solo Project',
+                        longDescription: 'Built a dual-mode Grade Calculator — a Java console application and a responsive web application to compute SGPA and CGPA using a credit-based 10-point grading scale. Implemented SGPA formula Σ(Grade Point × Credits) / Σ(Credits) and CGPA as average of all semester SGPAs.',
+                        features: [
+                            'Built a dual-mode Grade Calculator — Java console app and responsive web app',
+                            'Implemented SGPA formula Σ(Grade Point × Credits) / Σ(Credits) & CGPA calculations',
+                            'Modern web interface with dark glassmorphism UI and animated CGPA ring charts'
+                        ],
+                        detailedTech: ['Java', 'HTML', 'CSS', 'JS'],
+                        challenges: [
+                            { title: 'Implementing credit-weighted SGPA & CGPA math.', solution: 'Engineered mathematical formulas supporting unlimited students and semesters.' }
+                        ]
+                    }
+                },
+                {
+                    id: 'digital-clock',
+                    title: 'Digital Clock App',
+                    description: 'A feature-rich digital clock application with multiple time zones, alarms, and customizable themes, built with Java Swing.',
+                    category: 'desktop',
+                    icon: 'far fa-clock',
+                    tech: ['Java', 'Swing', 'OOP'],
+                    links: {
+                        github: 'https://github.com/abhijeetkumar51/Digital-clock-dark_mode'
+                    },
+                    details: {
+                        date: 'Oct 2022 - Dec 2022',
+                        type: 'Desktop Application',
+                        teamStatus: 'Solo Project',
+                        longDescription: 'A feature-rich digital clock application with multiple time zones, alarms, and customizable themes. Built with Java Swing, this desktop application provides a clean and intuitive interface for time management across different time zones.',
+                        features: [
+                            'Multiple time zone display',
+                            'Customizable alarm system with multiple alarms',
+                            'Stopwatch and countdown timer'
+                        ],
+                        detailedTech: ['Java', 'Java Swing', 'OOP'],
+                        challenges: [
+                            { title: 'Implementing accurate timekeeping across different time zones.', solution: 'Utilized Java TimeZone and Calendar classes to handle conversions.' }
+                        ]
+                    }
+                }
+            ];
+
+            const loadProjectsData = async () => {
+                try {
+                    const res = await fetch('http://localhost:3001/api/projects');
+                    if (res.ok) return await res.json();
+                } catch (e) {}
+
+                try {
+                    const res = await fetch('/api/projects');
+                    if (res.ok) return await res.json();
+                } catch (e) {}
+
+                return fallbackProjects;
+            };
+
+            loadProjectsData().then(projects => {
+                renderProjects(projects);
+                renderModals(projects);
+                initFilteringAndModals();
+            });
 
             function renderProjects(projects) {
                 const grid = document.getElementById('projectsGrid');
@@ -131,9 +303,16 @@
                             </div>
                             <div class="project-links">
                                 <a href="#${project.id}" class="btn small primary">View Details</a>
-                                <a href="${project.links.github}" target="_blank" class="btn small secondary">
-                                    <i class="fab fa-github"></i> GitHub
-                                </a>
+                                ${project.links && project.links.live ? `
+                                    <a href="${project.links.live}" target="_blank" class="btn small secondary">
+                                        <i class="fas fa-external-link-alt"></i> Live
+                                    </a>
+                                ` : ''}
+                                ${project.links && project.links.github ? `
+                                    <a href="${project.links.github}" target="_blank" class="btn small secondary">
+                                        <i class="fab fa-github"></i> GitHub
+                                    </a>
+                                ` : ''}
                             </div>
                         </div>
                     `;
@@ -178,19 +357,28 @@
                                         </div>
                                     </div>
                                     
-                                    <div class="project-challenges">
-                                        <h3>Challenges & Solutions</h3>
-                                        ${details.challenges.map(c => `
-                                            <p><strong>Challenge:</strong> ${c.title}<br>
-                                            <strong>Solution:</strong> ${c.solution}</p>
-                                        `).join('')}
-                                    </div>
+                                    ${details.challenges && details.challenges.length > 0 ? `
+                                        <div class="project-challenges">
+                                            <h3>Challenges & Solutions</h3>
+                                            ${details.challenges.map(c => `
+                                                <p><strong>Challenge:</strong> ${c.title}<br>
+                                                <strong>Solution:</strong> ${c.solution}</p>
+                                            `).join('')}
+                                        </div>
+                                    ` : ''}
                                 </div>
                                 
                                 <div class="project-links">
-                                    <a href="${project.links.github}" target="_blank" class="btn secondary">
-                                        <i class="fab fa-github"></i> View on GitHub
-                                    </a>
+                                    ${project.links && project.links.live ? `
+                                        <a href="${project.links.live}" target="_blank" class="btn primary">
+                                            <i class="fas fa-external-link-alt"></i> View Live Demo
+                                        </a>
+                                    ` : ''}
+                                    ${project.links && project.links.github ? `
+                                        <a href="${project.links.github}" target="_blank" class="btn secondary">
+                                            <i class="fab fa-github"></i> View on GitHub
+                                        </a>
+                                    ` : ''}
                                 </div>
                             </div>
                         </div>
