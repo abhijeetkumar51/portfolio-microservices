@@ -2,6 +2,7 @@ services:
   projects-service:
     build:
       context: ./projects-service
+    image: abhijeetkumar51/portfolio-projects-service:latest
     ports:
       - "3001:3001"
     environment:
@@ -11,6 +12,7 @@ services:
   contact-service:
     build:
       context: ./contact-service
+    image: abhijeetkumar51/portfolio-contact-service:latest
     ports:
       - "3002:3002"
     environment:
@@ -20,6 +22,7 @@ services:
   frontend:
     build:
       context: ./frontend
+    image: abhijeetkumar51/portfolio-frontend:latest
     ports:
       - "80:80"
     depends_on:
