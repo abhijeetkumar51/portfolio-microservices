@@ -78,7 +78,8 @@ const projects = [
         image: 'images/grade-calculator.png',
         tech: ['Java', 'HTML', 'CSS', 'JS'],
         links: {
-            github: 'https://github.com/abhijeetkumar51/Grade-calculator'
+            github: 'https://github.com/abhijeetkumar51/Grade-calculator',
+            live: 'https://grade-calculator-nine-lac.vercel.app/'
         },
         details: {
             date: 'Apr 2024',
