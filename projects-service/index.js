@@ -138,7 +138,8 @@ const projects = [
         image: 'images/online-exam-system.png',
         tech: ['Java', 'JSP', 'Servlet', 'MySQL', 'HTML', 'CSS'],
         links: {
-            github: 'https://github.com/abhijeetkumar51/Online_Exam_System'
+            github: 'https://github.com/abhijeetkumar51/Online_Exam_System',
+            live: 'https://online-exam-system-usci.onrender.com'
         },
         details: {
             date: 'May 2024',
