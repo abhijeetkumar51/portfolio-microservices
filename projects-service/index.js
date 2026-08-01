@@ -16,6 +16,7 @@ const projects = [
         description: 'Developed an AI-powered ATS Resume Analyzer using Flask and Groq AI for resume-job matching.',
         category: 'ai',
         icon: 'fas fa-file-alt',
+        image: 'images/ats-resume-analyzer.png',
         tech: ['Flask', 'Groq AI', 'Docker', 'GitHub Actions', 'HTML', 'CSS'],
         links: {
             github: 'https://github.com/abhijeetkumar51/ai-resume-analyzer',
@@ -45,6 +46,7 @@ const projects = [
         description: 'Designed an AI-driven language learning platform supporting contextual conversations and personalized learning experiences.',
         category: 'ai',
         icon: 'fas fa-robot',
+        image: 'images/ai-language-partner.png',
         tech: ['Python', 'HTML', 'CSS', 'Gemini API', 'MySQL'],
         links: {
             github: 'https://github.com/abhijeetkumar51/Ai-Language-partner'
@@ -73,6 +75,7 @@ const projects = [
         description: 'Built a dual-mode Grade Calculator — a Java console application and a responsive web application to compute SGPA and CGPA using a credit-based 10-point grading scale.',
         category: 'web',
         icon: 'fas fa-calculator',
+        image: 'images/grade-calculator.png',
         tech: ['Java', 'HTML', 'CSS', 'JS'],
         links: {
             github: 'https://github.com/abhijeetkumar51/Grade-calculator'
@@ -101,6 +104,7 @@ const projects = [
         description: 'A full-stack Expense Tracker application for real-time income & expense management, category analytics, and personal budget tracking.',
         category: 'web',
         icon: 'fas fa-wallet',
+        image: 'images/expense-tracker.png',
         tech: ['React', 'Node.js', 'Express', 'MongoDB', 'Tailwind CSS'],
         links: {
             github: 'https://github.com/abhijeetkumar51/Expense-Tracker',
@@ -131,6 +135,7 @@ const projects = [
         description: 'An automated Online Exam System designed for conducting online examinations, timer management, automated scoring, and student performance tracking.',
         category: 'web',
         icon: 'fas fa-file-signature',
+        image: 'images/online-exam-system.png',
         tech: ['Java', 'JSP', 'Servlet', 'MySQL', 'HTML', 'CSS'],
         links: {
             github: 'https://github.com/abhijeetkumar51/Online_Exam_System'
@@ -160,6 +165,7 @@ const projects = [
         description: 'A feature-rich digital clock application with multiple time zones, alarms, and customizable themes, built with Java Swing.',
         category: 'desktop',
         icon: 'far fa-clock',
+        image: 'images/digital-clock.png',
         tech: ['Java', 'Swing', 'OOP'],
         links: {
             github: 'https://github.com/abhijeetkumar51/Digital-clock-dark_mode'
